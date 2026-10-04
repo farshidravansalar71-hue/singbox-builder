@@ -31,10 +31,10 @@ jobs:
 
       - name: Build AAR
         run: |
-          go install golang.org/x/mobile/cmd/gomobile@latest
-          go install golang.org/x/mobile/cmd/gobind@latest
+          go install github.com/sagernet/gomobile/cmd/gomobile@latest
+          go install github.com/sagernet/gomobile/cmd/gobind@latest
           gomobile init
-          go run ./cmd/internal/build_libbox -target android -platform android/arm64,android/arm
+          go run ./cmd/internal/build_libbox -target android -platform android/arm64
 
       - name: Upload AAR Artifact
         uses: actions/upload-artifact@v4
