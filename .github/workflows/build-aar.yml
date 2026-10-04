@@ -30,6 +30,8 @@ jobs:
           ndk-version: r26d
 
       - name: Build AAR
+        env:
+          CGO_LDFLAGS: "-Wl,-z,max-page-size=16384"
         run: |
           go install github.com/sagernet/gomobile/cmd/gomobile@latest
           go install github.com/sagernet/gomobile/cmd/gobind@latest
